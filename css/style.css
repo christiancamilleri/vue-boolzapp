@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+/* common */
+
+.avatar {
+    height: 60px;
+    border-radius: 50%;
+    padding-left: 10px;
+}
+
+/* common */
+
 .container {
     display: flex;
 }
@@ -23,7 +33,7 @@
     background-color: orange;
 }
 
-.main {
+.main-container {
     height: 100vh;
     width: calc(100vw - 30vw);
 
@@ -36,15 +46,35 @@
 
 }
 
-.main .main-nav {
+.main-container .main-nav {
     height: 80px;
     flex-shrink: 0;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     /* test */
-    background-color: blue;
+    background-color: #f3eeea;
 }
 
-.sezione-messaggi {
+.main-container .main-nav .nome-amico {
+    flex-grow: 1;
+}
+
+
+.main-container .main-nav .nome-amico .ultimo-accesso {
+    opacity: .4;
+    font-size: .8em;
+}
+
+.main-container .main-nav .symbol {
+    display: flex;
+    gap: 10px;
+    padding: 0 1em;
+    font-size: 1.2em;
+}
+
+.main-container .sezione-messaggi {
     padding: 2em 3.5em;
     height: 100%;
 
@@ -52,9 +82,11 @@
     flex-direction: column;
     gap: 1em;
 
+    overflow: auto;
+
 }
 
-.inviato {
+.main-container .sezione-messaggi .inviato {
     padding: .7em;
 
     width: 200px;
@@ -67,20 +99,20 @@
 
 }
 
-.ricevuto {
+.main-container .sezione-messaggi .ricevuto {
     padding: .7em;
 
     width: 200px;
-    
+
     align-self: flex-start;
-    
+
     border-radius: 10px;
-    
+
     background-color: white;
 }
 
 
-.main .main-footer {
+.main-container .main-footer {
     height: 80px;
     flex-shrink: 0;
 
@@ -92,18 +124,18 @@
     background-color: #f3eeea;
 }
 
-.emoji {
+.main-container .main-footer .emoji {
     padding: 1em;
     font-size: 1.5em;
 }
 
-.barra-messaggi {
+.main-container .main-footer .barra-messaggi {
     flex-grow: 1;
 }
 
-.barra-messaggi input {
-  width: 100%;
-  padding: 1em;
-  border-radius: 5px;
- 
+.main-container .main-footer .barra-messaggi input {
+    width: 100%;
+    padding: 1em;
+    border-radius: 5px;
+
 }
