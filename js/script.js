@@ -165,13 +165,17 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            indiceAttivo: 0
 
 
 
         }
     },
     methods: {
-
+    changeChat(index) {
+        this.indiceAttivo = index
+    }
     },
 }).mount('#app')

@@ -49,31 +49,33 @@
                     </div>
                 </div>
                 <!-- lista chat -->
-                    <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
-                    <ul>
-                        <li v-for="(contatto, indice) in contacts" class="amici">
-                         <img class="avatar" :src="contatto.avatar" alt="">
-                         <div class="info">
+                <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                <ul>
+                    <li @click="changeChat(indice)" v-for="(contatto, indice) in contacts" class="amici">
+                        <img class="avatar" :src="contatto.avatar" alt="">
+                        <div class="info">
                             {{contatto.name }}
                             <br>
-                            <span style="opacity: .4;">Ultimo messaggio inviato</span> 
-                         </div>
-                         <div style="opacity: .4;">
+                            <span style="opacity: .4;">Ultimo messaggio inviato</span>
+                        </div>
+                        <div style="opacity: .4;">
                             12.00
-                         </div>
-                        </li>
-                    </ul>
-                
+                        </div>
+                    </li>
+                </ul>
+
             </section>
             <!-- sezione destra dell'app parte principale -->
             <main class="main-container">
                 <!-- nav main -->
                 <nav class="main-nav">
                     <div class="profile-img">
-                        <img class="avatar" src="img/avatar_1.jpg" alt="">
+                        <img class="avatar" :src="contacts[indiceAttivo].avatar" alt="">
                     </div>
                     <div class="nome-amico">
-                        <div>Michele</div>
+                        <div>
+                            {{contacts[indiceAttivo].name}}
+                        </div>
                         <div class="ultimo-accesso">ultimo accesso oggi alle 12:00</div>
                     </div>
                     <div class="symbol">
@@ -83,9 +85,12 @@
                     </div>
                 </nav>
                 <!-- sezione messaggi -->
-                <section  class="sezione-messaggi">
-                    
-                    <span v-for="(contatto, index) in contacts"  :class="contatto.messages[1].status == `sent` ? `inviato` : `ricevuto`"> {{contatto.messages[1].message}} </span>
+                <section class="sezione-messaggi">
+
+                    <span v-for="(messaggio, index) in contacts[indiceAttivo].messages"
+                        :class="messaggio.status == `sent` ? `inviato` : `ricevuto`">
+                        {{messaggio.message}}
+                    </span>
                     <!-- <span class="inviato">Ricordati di stendere i panni</span>
                     <span class="ricevuto">Tutto fatto!</span> -->
 
