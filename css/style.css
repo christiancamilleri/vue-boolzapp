@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 .container {
     display: flex;
 }
@@ -30,20 +31,79 @@
     flex-direction: column;
     justify-content: space-between;
 
-    /* test */
-    background-color: aqua;
+    background-image: url(../img/mine.jpg);
+
+
 }
 
 .main .main-nav {
     height: 80px;
+    flex-shrink: 0;
 
     /* test */
     background-color: blue;
 }
 
+.sezione-messaggi {
+    padding: 2em 3.5em;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+
+.inviato {
+    padding: .7em;
+
+    width: 200px;
+
+    align-self: flex-end;
+
+    border-radius: 10px;
+
+    background-color: #d5f9ba;
+
+}
+
+.ricevuto {
+    padding: .7em;
+
+    width: 200px;
+    
+    align-self: flex-start;
+    
+    border-radius: 10px;
+    
+    background-color: white;
+}
+
+
 .main .main-footer {
     height: 80px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     /* test */
-    background-color: blueviolet;
+    background-color: #f3eeea;
+}
+
+.emoji {
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.barra-messaggi {
+    flex-grow: 1;
+}
+
+.barra-messaggi input {
+  width: 100%;
+  padding: 1em;
+  border-radius: 5px;
+ 
 }
