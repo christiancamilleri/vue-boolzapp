@@ -25,8 +25,45 @@
             <section class="aside">
                 <!-- nav sezione sinistra -->
                 <nav class="aside-nav">
-
+                    <div class="img-utente">
+                        <img class="avatar" src="img/avatar_io.jpg"></img>
+                    </div>
+                    <div class="nome-utente">
+                        Christian
+                    </div>
+                    <div class="symbol">
+                        <i class="fa-sharp fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
                 </nav>
+                <!-- banner notifiche disattivate -->
+                <div class="notifiche">
+                    <div class="campanella">
+                        <i class="fa-regular fa-bell-slash"></i>
+                    </div>
+                    <div class="testo">
+                        Ricevi notifichedi nuovi messaggi
+                        <br>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <!-- lista chat -->
+                    <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <ul>
+                        <li v-for="(contatto, indice) in contacts" class="amici">
+                         <img class="avatar" :src="contatto.avatar" alt="">
+                         <div class="info">
+                            {{contatto.name }}
+                            <br>
+                            <span style="opacity: .4;">Ultimo messaggio inviato</span> 
+                         </div>
+                         <div style="opacity: .4;">
+                            12.00
+                         </div>
+                        </li>
+                    </ul>
+                
             </section>
             <!-- sezione destra dell'app parte principale -->
             <main class="main-container">

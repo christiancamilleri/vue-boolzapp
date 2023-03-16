@@ -12,6 +12,13 @@
     padding-left: 10px;
 }
 
+.symbol {
+    display: flex;
+    gap: 10px;
+    padding: 0 1em;
+    font-size: 1.2em;
+    color: #b1b1b1;
+}
 /* common */
 
 .container {
@@ -21,16 +28,56 @@
 .aside {
     height: 100vh;
     width: 30vw;
-
-    /* test */
-    background-color: red;
+    
+    display: flex;
+    flex-direction: column;
+   
 }
 
 .aside .aside-nav {
     height: 80px;
 
-    /* test */
-    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color:  #f3eeea;
+}
+
+.aside .aside-nav .nome-utente {
+    flex-grow: 1;
+}
+
+.aside .notifiche {
+    display: flex;
+    gap: .5em;
+
+    padding: 1em;
+
+    background-color: #8edafc;
+}
+
+.aside .notifiche .campanella {
+    font-size: 2em;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.aside #search-bar {
+    padding: 10px;
+    margin: 10px 10px;
+    border-radius: 8px;
+}
+
+.aside .amici {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.aside .amici .info {
+    flex-grow: 1;
 }
 
 .main-container {
@@ -67,12 +114,6 @@
     font-size: .8em;
 }
 
-.main-container .main-nav .symbol {
-    display: flex;
-    gap: 10px;
-    padding: 0 1em;
-    font-size: 1.2em;
-}
 
 .main-container .sezione-messaggi {
     padding: 2em 3.5em;
