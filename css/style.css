@@ -3,3 +3,47 @@
     margin: 0;
     box-sizing: border-box;
 }
+.container {
+    display: flex;
+}
+
+.aside {
+    height: 100vh;
+    width: 30vw;
+
+    /* test */
+    background-color: red;
+}
+
+.aside .aside-nav {
+    height: 80px;
+
+    /* test */
+    background-color: orange;
+}
+
+.main {
+    height: 100vh;
+    width: calc(100vw - 30vw);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* test */
+    background-color: aqua;
+}
+
+.main .main-nav {
+    height: 80px;
+
+    /* test */
+    background-color: blue;
+}
+
+.main .main-footer {
+    height: 80px;
+
+    /* test */
+    background-color: blueviolet;
+}
