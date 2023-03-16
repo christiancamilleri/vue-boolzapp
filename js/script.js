@@ -167,7 +167,18 @@ createApp({
                 }
             ],
 
-            indiceAttivo: 0
+            indiceAttivo: 0,
+
+            newMessage: {
+                date: '10/01/2020 15:51:00',
+                message: "",
+                status: `sent`
+            },
+            messaggioRisposta: {
+                date: '10/01/2020 15:51:00',
+                message: "ok",
+                status: `receveid`
+            }
 
 
 
@@ -176,6 +187,20 @@ createApp({
     methods: {
     changeChat(index) {
         this.indiceAttivo = index
+    },
+    pushNewMessage() {
+       
+        this.contacts[this.indiceAttivo].messages.push(this.newMessage)
+
+        this.newMessage = {
+            date: '10/01/2020 15:51:00',
+            message: "",
+            status: `sent`
+        }
+
+        risposta = setTimeout(() => {
+            this.contacts[this.indiceAttivo].messages.push(this.messaggioRisposta)
+        }, 1000)
     }
     },
 }).mount('#app')

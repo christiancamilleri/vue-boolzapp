@@ -101,7 +101,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="barra-messaggi">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input @keyup.enter="pushNewMessage()" v-model="newMessage.message" type="text" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="emoji">
                         <i class="fa-solid fa-microphone"></i>
