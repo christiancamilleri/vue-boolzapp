@@ -127,7 +127,7 @@
 
 }
 
-.main-container .sezione-messaggi .inviato {
+.inviato {
     padding: .7em;
 
     width: 200px;
@@ -140,7 +140,7 @@
 
 }
 
-.main-container .sezione-messaggi .ricevuto {
+.ricevuto {
     padding: .7em;
 
     width: 200px;

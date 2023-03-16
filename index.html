@@ -83,11 +83,11 @@
                     </div>
                 </nav>
                 <!-- sezione messaggi -->
-                <section class="sezione-messaggi">
-
-                    <span class="inviato">Hai portato a spasso il cane?</span>
-                    <span class="inviato">Ricordati di stendere i panni</span>
-                    <span class="ricevuto">Tutto fatto!</span>
+                <section  class="sezione-messaggi">
+                    
+                    <span v-for="(contatto, index) in contacts"  :class="contatto.messages[1].status == `sent` ? `inviato` : `ricevuto`"> {{contatto.messages[1].message}} </span>
+                    <!-- <span class="inviato">Ricordati di stendere i panni</span>
+                    <span class="ricevuto">Tutto fatto!</span> -->
 
                 </section>
                 <!-- footer -->
