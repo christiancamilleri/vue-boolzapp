@@ -29,6 +29,10 @@
     height: 100vh;
 
     background-color: #d5dbd8;
+
+    overflow: auto;
+
+
 }
 
 .container {
@@ -49,6 +53,8 @@
   max-width: 1500px;
 
   margin: 0 auto;
+
+  
 }
 
 #background-top {
