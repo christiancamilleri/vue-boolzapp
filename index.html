@@ -29,7 +29,7 @@
                         <img class="avatar" src="img/avatar_io.jpg"></img>
                     </div>
                     <div class="nome-utente">
-                        Christian
+                       <h3>Christian</h3> 
                     </div>
                     <div class="symbol">
                         <i class="fa-sharp fa-solid fa-circle-notch"></i>
@@ -43,20 +43,23 @@
                         <i class="fa-regular fa-bell-slash"></i>
                     </div>
                     <div class="testo">
-                        Ricevi notifichedi nuovi messaggi
-                        <br>
+                        <h4>Ricevi notifiche di nuovi messaggi</h4> 
+                        
                         <a href="#">Attiva notifiche desktop</a>
                     </div>
                 </div>
                 <!-- lista chat -->
-                <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" >
                 <ul>
-                    <li @click="changeChat(indice)" v-for="(contatto, indice) in contacts" class="amici">
+                    <li @click="changeChat(indice)"  v-for="(contatto, indice) in contacts"  class="amici">
+                    
                         <img class="avatar" :src="contatto.avatar" alt="">
                         <div class="info">
-                            {{contatto.name }}
-                            <br>
-                            <span style="opacity: .4;">Ultimo messaggio inviato</span>
+                             <h3>{{contatto.name }}</h3> 
+                            
+                            <span style="opacity: .4;">
+                               {{contatto.messages[contatto.messages.length - 1].message}}
+                            </span>
                         </div>
                         <div style="opacity: .4;">
                             12.00
@@ -74,7 +77,7 @@
                     </div>
                     <div class="nome-amico">
                         <div>
-                            {{contacts[indiceAttivo].name}}
+                         <h3>{{contacts[indiceAttivo].name}}</h3>   
                         </div>
                         <div class="ultimo-accesso">ultimo accesso oggi alle 12:00</div>
                     </div>
@@ -90,6 +93,9 @@
                     <span v-for="(messaggio, index) in contacts[indiceAttivo].messages"
                         :class="messaggio.status == `sent` ? `inviato` : `ricevuto`">
                         {{messaggio.message}}
+                        <div class="orario">
+                            12:00
+                        </div>
                     </span>
                     <!-- <span class="inviato">Ricordati di stendere i panni</span>
                     <span class="ricevuto">Tutto fatto!</span> -->

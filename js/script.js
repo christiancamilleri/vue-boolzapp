@@ -169,6 +169,8 @@ createApp({
 
             indiceAttivo: 0,
 
+            searchContact: "",
+
             newMessage: {
                 date: '10/01/2020 15:51:00',
                 message: "",
@@ -178,9 +180,8 @@ createApp({
                 date: '10/01/2020 15:51:00',
                 message: "ok",
                 status: `receveid`
-            }
-
-
+            },
+            
 
         }
     },
@@ -201,6 +202,12 @@ createApp({
         risposta = setTimeout(() => {
             this.contacts[this.indiceAttivo].messages.push(this.messaggioRisposta)
         }, 1000)
+    },
+
+    ricercaContatto() {
+        this.contacts.filter(contactName => contacts.name.toLowerCase().includes(this.searchContact.toLowerCase()))
+        console.log("ciao")
     }
+    
     },
 }).mount('#app')
