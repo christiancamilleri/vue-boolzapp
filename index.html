@@ -19,7 +19,7 @@
 
 <body>
     <div id="app">
-        {{oraAttuale()}}
+        
         <!-- container generale -->
         <div class="container">
             <!-- sezione sinistra dell'app -->
@@ -50,9 +50,9 @@
                     </div>
                 </div>
                 <!-- lista chat -->
-                <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v:model="searchContact" @keyup="ricercaChat" >
+                <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchContact" @keyup="ricercaChat" >
                 <ul>
-                    <li @click="changeChat(indice)"  v-for="(contatto, indice) in contacts"  class="amici" :class="indice == indiceAttivo ? `active` : ``" >
+                    <li @click="changeChat(indice)"  v-for="(contatto, indice) in contacts"  class="amici" :class="indice == indiceAttivo ? `active` : ``" v-show="contatto.visible" >
                     
                         <img class="avatar" :src="contatto.avatar" alt="">
                         <div class="info">

@@ -215,14 +215,10 @@ createApp({
         return newDate
         
     },
-    ricercaChat() {
-     const nomeContatto = this.contacts.some((el) => el.name === this.searchContact);
-     this.contacts.visible = nomeContatto;
-
-     if(this.contacts.visible == false) {
-        
-     }
-     console.log(nomeContatto)
+    ricercaChat() {    
+    this.contacts.forEach( contact =>{
+        contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+      })
     }
 
     
