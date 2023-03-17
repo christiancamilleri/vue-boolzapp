@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <!-- lista chat -->
-                <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" >
+                <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" v:model="searchContact" @keyup="ricercaChat" >
                 <ul>
                     <li @click="changeChat(indice)"  v-for="(contatto, indice) in contacts"  class="amici" :class="indice == indiceAttivo ? `active` : ``" >
                     

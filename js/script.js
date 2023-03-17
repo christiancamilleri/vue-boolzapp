@@ -203,11 +203,6 @@ createApp({
             this.contacts[this.indiceAttivo].messages.push(this.messaggioRisposta)
         }, 1000)
     },
-
-    ricercaContatto() {
-        this.contacts.filter(contactName => contacts.name.toLowerCase().includes(this.searchContact.toLowerCase()))
-        console.log("ciao")
-    },
     oraAttuale() {
         const today = new Date();
         
@@ -219,7 +214,17 @@ createApp({
 
         return newDate
         
+    },
+    ricercaChat() {
+     const nomeContatto = this.contacts.some((el) => el.name === this.searchContact);
+     this.contacts.visible = nomeContatto;
+
+     if(this.contacts.visible == false) {
+        
+     }
+     console.log(nomeContatto)
     }
+
     
     },
 }).mount('#app')
