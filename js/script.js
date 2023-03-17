@@ -168,59 +168,63 @@ createApp({
             ],
 
             indiceAttivo: 0,
-
             searchContact: "",
-
             newMessage: {
-                date: '10/01/2020 15:51:00',
+                date: '',
                 message: "",
                 status: `sent`
             },
-            messaggioRisposta: {
-                date: '10/01/2020 15:51:00',
-                message: "ok",
-                status: `receveid`
-            },
-            
+
 
         }
     },
     methods: {
-    changeChat(index) {
-        this.indiceAttivo = index
-    },
-    pushNewMessage() {
-       
-        this.contacts[this.indiceAttivo].messages.push(this.newMessage)
+        changeChat(index) {
+            this.indiceAttivo = index
+        },
+        pushNewMessage() {
 
-        this.newMessage = {
-            date: '10/01/2020 15:51:00',
-            message: "",
-            status: `sent`
-        }
+            this.contacts[this.indiceAttivo].messages.push(this.newMessage)
 
-        risposta = setTimeout(() => {
-            this.contacts[this.indiceAttivo].messages.push(this.messaggioRisposta)
-        }, 1000)
-    },
-    oraAttuale() {
-        const today = new Date();
-        
-        const newDate = Intl.DateTimeFormat("it-IT", {
-            hour: "numeric",
-            minute: "numeric"
-        }).format(today)
-        console.log(newDate)
+            this.newMessage = {
+                date: this.ultimoAccesso(this.indiceAttivo),
+                message: "",
+                status: `sent`
+            }
 
-        return newDate
-        
-    },
-    ricercaChat() {    
-    this.contacts.forEach( contact =>{
-        contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
-      })
-    }
+            risposta = setTimeout(() => {
+                messaggioRisposta =  {
+                    date: this.oraAttuale(),
+                    message: "ok",
+                    status: `receveid`
+                }
+                this.contacts[this.indiceAttivo].messages.push(messaggioRisposta)
+            }, 1000)
+        },
+        oraAttuale() {
+            const today = new Date();
 
-    
+            const newDate = Intl.DateTimeFormat("it-IT", {
+                hour: "numeric",
+                minute: "numeric"
+            }).format(today)
+            console.log(newDate)
+
+            return newDate
+
+        },
+        ricercaChat() {
+            this.contacts.forEach(contact => {
+                contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
+            })
+        },
+        deleteMessage(index){
+            this.contacts[this.indiceAttivo].messages.splice(index, 1);
+        },
+        ultimoAccesso(index) {  
+            let lastMex= this.contacts[index].messages.length -1;
+            return this.contacts[index].messages[lastMex].date;
+        },
+
     },
 }).mount('#app')

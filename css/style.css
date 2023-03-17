@@ -19,6 +19,7 @@
     font-size: 1.2em;
     color: #b1b1b1;
 }
+
 /* common */
 
 .container {
@@ -28,12 +29,12 @@
 .aside {
     height: 100vh;
     width: 30vw;
-    
+
     display: flex;
     flex-direction: column;
 
     overflow: auto;
-   
+
 }
 
 .aside .aside-nav {
@@ -44,7 +45,7 @@
     align-items: center;
     flex-shrink: 0;
 
-    background-color:  #f3eeea;
+    background-color: #f3eeea;
 
     border-right: 1px solid darkgray;
 }
@@ -81,7 +82,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    
+
     padding-right: 10px;
     padding: 10px;
 
@@ -163,6 +164,7 @@
 }
 
 .inviato {
+    position: relative;
     padding: .7em;
 
     width: 200px;
@@ -175,7 +177,56 @@
 
 }
 
+.fa-caret-down {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    color: darkgray;
+
+
+}
+
+
+.dropdown {
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    list-style-type: none;
+
+    display: none;
+
+    border: solid 1px #eee;
+}
+
+.inviato:hover .dropdown {
+    transition: .5s;
+    display: block;
+    cursor: pointer;
+
+}
+
+.ricevuto:hover .dropdown {
+    transition: .5s;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown li {
+    font-size: .8em;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+    color: darkgrey;
+}
+
+.dropdown li:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
 .ricevuto {
+    position: relative;
     padding: .7em;
 
     width: 200px;
