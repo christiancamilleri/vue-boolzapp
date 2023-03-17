@@ -207,6 +207,18 @@ createApp({
     ricercaContatto() {
         this.contacts.filter(contactName => contacts.name.toLowerCase().includes(this.searchContact.toLowerCase()))
         console.log("ciao")
+    },
+    oraAttuale() {
+        const today = new Date();
+        
+        const newDate = Intl.DateTimeFormat("it-IT", {
+            hour: "numeric",
+            minute: "numeric"
+        }).format(today)
+        console.log(newDate)
+
+        return newDate
+        
     }
     
     },

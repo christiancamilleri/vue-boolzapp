@@ -19,6 +19,7 @@
 
 <body>
     <div id="app">
+        {{oraAttuale()}}
         <!-- container generale -->
         <div class="container">
             <!-- sezione sinistra dell'app -->
@@ -80,7 +81,7 @@
                          <h3>{{contacts[indiceAttivo].name}}</h3>   
                         </div>
                         <div class="ultimo-accesso">
-                            ultimo accesso oggi alle 12:00
+                            ultimo accesso oggi alle {{oraAttuale()}}
                         </div>
                     </div>
                     <div class="symbol">
@@ -96,7 +97,7 @@
                         :class="messaggio.status == `sent` ? `inviato` : `ricevuto`">
                         {{messaggio.message}}
                         <div class="orario">
-                            12:00
+                            {{oraAttuale()}}
                         </div>
                     </span>
                     <!-- <span class="inviato">Ricordati di stendere i panni</span>
