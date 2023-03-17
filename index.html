@@ -51,7 +51,7 @@
                 <!-- lista chat -->
                 <input id="search-bar" type="text" placeholder="Cerca o inizia una nuova chat" >
                 <ul>
-                    <li @click="changeChat(indice)"  v-for="(contatto, indice) in contacts"  class="amici">
+                    <li @click="changeChat(indice)"  v-for="(contatto, indice) in contacts"  class="amici" :class="indice == indiceAttivo ? `active` : ``" >
                     
                         <img class="avatar" :src="contatto.avatar" alt="">
                         <div class="info">
@@ -61,7 +61,7 @@
                                {{contatto.messages[contatto.messages.length - 1].message}}
                             </span>
                         </div>
-                        <div style="opacity: .4;">
+                        <div class="time">
                             12.00
                         </div>
                     </li>
@@ -79,7 +79,9 @@
                         <div>
                          <h3>{{contacts[indiceAttivo].name}}</h3>   
                         </div>
-                        <div class="ultimo-accesso">ultimo accesso oggi alle 12:00</div>
+                        <div class="ultimo-accesso">
+                            ultimo accesso oggi alle 12:00
+                        </div>
                     </div>
                     <div class="symbol">
                         <i class="fa-solid fa-magnifying-glass"></i>
