@@ -170,6 +170,13 @@ createApp({
             indiceAttivo: 0,
             searchContact: "",
             textMessage: "",
+            arrayRisposte: [
+                "Tutto bene!",
+                "Alla grande",
+                "Purtroppo domani ho un impegno",
+                "Mi sembra un ottima idea",
+                "Mi andrebbe una bella pizza",
+            ]
             
         }
     },
@@ -193,7 +200,7 @@ createApp({
             risposta = setTimeout(() => {
                 messaggioRisposta =  {
                     date: this.oraAttuale(),
-                    message: "ok",
+                    message: this.pescoStringaArray(),
                     status: `receveid`
                 }
                 this.contacts[this.indiceAttivo].messages.push(messaggioRisposta)
@@ -223,6 +230,14 @@ createApp({
             let lastMex= this.contacts[index].messages.length -1;
             return this.contacts[index].messages[lastMex].date;
         },
+        pescoStringaArray() {
+            let random = Math.floor(Math.random() * this.arrayRisposte.length);
+
+            randomString = this.arrayRisposte[random]
+
+            return randomString
+
+        }
 
     },
 }).mount('#app')
