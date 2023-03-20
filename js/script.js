@@ -176,7 +176,8 @@ createApp({
                 "Purtroppo domani ho un impegno",
                 "Mi sembra un ottima idea",
                 "Mi andrebbe una bella pizza",
-            ]
+            ],
+            rispostaMex: 0,
             
         }
     },
@@ -186,13 +187,15 @@ createApp({
         },
         pushNewMessage() {
             
+            this.rispostaMex = this.indiceAttivo
+
             newMessage = {
                 date: this.oraAttuale(),
                 message: this.textMessage,
                 status: `sent`
             }
 
-            this.contacts[this.indiceAttivo].messages.push(newMessage)
+            this.contacts[this.rispostaMex].messages.push(newMessage)
 
             this.textMessage = ""
 
@@ -203,8 +206,10 @@ createApp({
                     message: this.pescoStringaArray(),
                     status: `receveid`
                 }
-                this.contacts[this.indiceAttivo].messages.push(messaggioRisposta)
+                this.contacts[this.rispostaMex].messages.push(messaggioRisposta)
             }, 1000)
+
+
         },
         oraAttuale() {
             const today = new Date();

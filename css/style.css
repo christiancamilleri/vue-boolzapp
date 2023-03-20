@@ -60,7 +60,7 @@
 
     width: 100%;
 
-    max-width: 1200px;
+    max-width: 1500px;
 
     margin: 0 auto;
 
@@ -270,7 +270,7 @@
     border: solid 1px #eee;
 }
 
-/* .inviato:hover .dropdown {
+.inviato:hover .dropdown {
     transition: .5s;
     display: block;
     cursor: pointer;
@@ -281,7 +281,7 @@
     transition: .5s;
     display: block;
     cursor: pointer;
-} */
+}
 
 .dropdown li {
     font-size: .8em;
