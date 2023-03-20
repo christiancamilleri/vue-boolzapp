@@ -6,6 +6,8 @@
 
 /* common */
 
+
+
 .avatar {
     height: 60px;
     border-radius: 50%;
@@ -20,47 +22,55 @@
     color: #b1b1b1;
 }
 
+.symbol :hover {
+    color: #009688;
+    cursor: pointer
+}
+
+.emoji :hover {
+    color: #009688;
+    cursor: pointer;
+}
+
 /* common */
 
 #app {
     position: relative;
 
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+
 
     background-color: #d5dbd8;
 
     overflow: auto;
-
-
 }
 
 .container {
     display: flex;
-  flex-flow: row nowrap;
+    flex-flow: row nowrap;
 
-    
 
-  position: absolute;
-  top: 30px;
-  bottom: 30px;
-  left: 10px;
-  right: 10px;
 
-  /* transform: translateX(-50%); */
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 10px;
+    right: 10px;
 
-  width: 100%;
-  max-width: 1500px;
+    width: 100%;
 
-  margin: 0 auto;
+    max-width: 1200px;
 
-  
+    margin: 0 auto;
+
+
 }
 
 #background-top {
     background-color: #009688;
     height: 120px;
-  }
+}
 
 .aside {
     height: 100vh;
@@ -189,11 +199,16 @@
     padding: 2em 3.5em;
     height: 100%;
 
+    display: block;
+
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+
     gap: 1em;
 
-    overflow: auto;
+    overflow-y: auto;
 
 }
 
@@ -205,14 +220,31 @@
     position: relative;
     padding: .7em;
 
-    width: 200px;
-
+    min-width: 250px;
+    max-width: 60%;
+    min-height: 50px;
+  
     align-self: flex-end;
 
     border-radius: 10px;
 
     background-color: #d5f9ba;
 
+}
+
+.ricevuto {
+    position: relative;
+    padding: .7em;
+
+    min-width: 200px;
+    max-width: 60%;
+    min-height: 50px;
+
+    align-self: flex-start;
+
+    border-radius: 10px;
+
+    background-color: white;
 }
 
 .fa-caret-down {
@@ -238,7 +270,7 @@
     border: solid 1px #eee;
 }
 
-.inviato:hover .dropdown {
+/* .inviato:hover .dropdown {
     transition: .5s;
     display: block;
     cursor: pointer;
@@ -249,7 +281,7 @@
     transition: .5s;
     display: block;
     cursor: pointer;
-}
+} */
 
 .dropdown li {
     font-size: .8em;
@@ -263,26 +295,17 @@
     cursor: pointer;
 }
 
-.ricevuto {
-    position: relative;
-    padding: .7em;
-
-    width: 200px;
-
-    align-self: flex-start;
-
-    border-radius: 10px;
-
-    background-color: white;
-}
 
 .orario {
     position: absolute;
-    bottom: 6px;
-    right: 6px;
+  right: 6px;
+  bottom: 3px;
 
-    opacity: .4;
-    font-size: .7em;
+  font-size: .7em;
+
+  
+
+  color: #aaa
 }
 
 

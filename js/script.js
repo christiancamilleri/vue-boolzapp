@@ -169,13 +169,8 @@ createApp({
 
             indiceAttivo: 0,
             searchContact: "",
-            newMessage: {
-                date: '',
-                message: "",
-                status: `sent`
-            },
-
-
+            textMessage: "",
+            
         }
     },
     methods: {
@@ -183,14 +178,17 @@ createApp({
             this.indiceAttivo = index
         },
         pushNewMessage() {
-
-            this.contacts[this.indiceAttivo].messages.push(this.newMessage)
-
-            this.newMessage = {
-                date: this.ultimoAccesso(this.indiceAttivo),
-                message: "",
+            
+            newMessage = {
+                date: this.oraAttuale(),
+                message: this.textMessage,
                 status: `sent`
             }
+
+            this.contacts[this.indiceAttivo].messages.push(newMessage)
+
+            this.textMessage = ""
+
 
             risposta = setTimeout(() => {
                 messaggioRisposta =  {

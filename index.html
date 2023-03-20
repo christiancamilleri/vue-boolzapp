@@ -66,7 +66,7 @@
                             </span>
                         </div>
                         <div class="time">
-                            12.00
+                            {{ultimoAccesso(indice)}}
                         </div>
                     </li>
                 </ul>
@@ -94,9 +94,9 @@
                     </div>
                 </nav>
                 <!-- sezione messaggi -->
-                <section class="sezione-messaggi">
+                <div class="sezione-messaggi">
 
-                    <span v-for="(messaggio, index) in contacts[indiceAttivo].messages"
+                    <div v-for="(messaggio, index) in contacts[indiceAttivo].messages"
                         :class="messaggio.status == `sent` ? `inviato` : `ricevuto`">
                         {{messaggio.message}}
                         <div class="orario">
@@ -107,17 +107,17 @@
                             <li>Message info</li>
                             <li @click="deleteMessage(index)">Delete message</li>
                         </ul>
-                    </span>
+                    </div>
                     
 
-                </section>
+                </div>
                 <!-- footer -->
                 <footer class="main-footer">
                     <div class="emoji">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="barra-messaggi">
-                        <input @keyup.enter="pushNewMessage()" v-model="newMessage.message" type="text" placeholder="Scrivi un messaggio">
+                        <input @keyup.enter="pushNewMessage()" v-model="textMessage" type="text" placeholder="Scrivi un messaggio">
                     </div>
                     <div class="emoji">
                         <i class="fa-solid fa-microphone"></i>
