@@ -34,16 +34,20 @@
 
 /* common */
 
-#app {
+body {
     position: relative;
+}
 
-    width: 100vw;
+#app {
+    
+
+    width: 100%;
     height: 100vh;
 
 
     background-color: #d5dbd8;
 
-    overflow: auto;
+   
 }
 
 .container {
@@ -63,7 +67,8 @@
     max-width: 1500px;
 
     margin: 0 auto;
-
+    
+    z-index: 2;
 
 }
 
@@ -73,7 +78,6 @@
 }
 
 .aside {
-    height: 100vh;
     width: 30vw;
 
     display: flex;
@@ -161,7 +165,7 @@
 }
 
 .main-container {
-    height: 100vh;
+    
     width: calc(100vw - 30vw);
 
     display: flex;

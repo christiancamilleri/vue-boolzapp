@@ -186,18 +186,24 @@ createApp({
             this.indiceAttivo = index
         },
         pushNewMessage() {
-            
-            this.rispostaMex = this.indiceAttivo
+             
+            if(this.textMessage == "") {
+                return ""
+            } else {
 
-            newMessage = {
-                date: this.oraAttuale(),
-                message: this.textMessage,
-                status: `sent`
+                this.rispostaMex = this.indiceAttivo
+    
+                newMessage = {
+                    date: this.oraAttuale(),
+                    message: this.textMessage,
+                    status: `sent`
+                }
+    
+                this.contacts[this.rispostaMex].messages.push(newMessage)
+    
+                this.textMessage = ""
             }
-
-            this.contacts[this.rispostaMex].messages.push(newMessage)
-
-            this.textMessage = ""
+            
 
 
             risposta = setTimeout(() => {
@@ -216,25 +222,37 @@ createApp({
 
             const newDate = Intl.DateTimeFormat("it-IT", {
                 hour: "numeric",
-                minute: "numeric"
+                minute: "numeric",
             }).format(today)
             console.log(newDate)
 
             return newDate
 
         },
+        
         ricercaChat() {
             this.contacts.forEach(contact => {
                 contact.visible = contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
             })
         },
+
         deleteMessage(index){
             this.contacts[this.indiceAttivo].messages.splice(index, 1);
         },
+
         ultimoAccesso(index) {  
-            let lastMex= this.contacts[index].messages.length -1;
-            return this.contacts[index].messages[lastMex].date;
+            if(this.contacts[index].messages.length == 0) {
+                
+                return "";
+            
+            } else {
+                
+                let lastMex= this.contacts[index].messages.length -1;
+                return this.contacts[index].messages[lastMex].date;
+            }
+            
         },
+       
         pescoStringaArray() {
             let random = Math.floor(Math.random() * this.arrayRisposte.length);
 
